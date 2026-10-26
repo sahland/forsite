@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Форсайт — агентство продвижения на Авито</title>
+<meta name="description" content="Форсайт — агентство продвижения бизнеса на Авито. Товары, услуги, спецтехника, найм: аудит, оформление профиля, объявления, продвижение и ведение. Бесплатный аудит.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F8F2;
+  --surface:#FFFFFF;
+  --ink:#0F1F17;
+  --muted:#4F6358;
+  --line:#DCE7DD;
+  --deep:#0D2A1E;
+  --deep-2:#133A29;
+  --green:#1F9D5A;
+  --green-2:#17804A;
+  --lime:#B9F27C;
+  --soft:#E6F3E4;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:14px}
+.lead{color:var(--muted);font-size:18px;max-width:660px}
+section{padding:88px 0}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);background:var(--soft);padding:6px 12px;border-radius:99px;margin-bottom:16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;text-decoration:none;padding:15px 24px;border-radius:14px;transition:transform .15s,background .15s;border:2px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn-main{background:var(--lime);color:var(--deep)}
+.btn-main:hover{background:#C9F798}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-2)}
+.btn svg{width:20px;height:20px;flex:none}
+
+header{position:sticky;top:0;z-index:20;background:rgba(13,42,30,.94);backdrop-filter:blur(8px);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Unbounded,sans-serif;font-weight:700;font-size:20px;text-decoration:none}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--lime);display:grid;place-items:center}
+.logo-mark svg{width:20px;height:20px}
+.nav-links{display:flex;gap:26px;font-size:15px;font-weight:600}
+.nav-links a{text-decoration:none;opacity:.8}
+.nav-links a:hover{opacity:1}
+.nav .btn{padding:10px 16px;font-size:15px}
+
+.hero{background:radial-gradient(1000px 500px at 85% 0%,#1F5A3C 0%,transparent 60%),var(--deep);color:#fff;padding:80px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(34px,5.2vw,58px);margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{font-size:19px;color:#C9DCCF;max-width:560px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:22px;font-size:14px;color:#9DB8A6}
+
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{background:var(--deep-2);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+.tile svg{width:30px;height:30px;color:var(--lime)}
+.tile b{font-family:Unbounded,sans-serif;font-size:17px;display:block;margin-top:18px}
+.tile span{font-size:14px;color:#9DB8A6}
+.tile.hl{background:var(--lime);color:var(--deep);border-color:var(--lime)}
+.tile.hl svg{color:var(--deep)}
+.tile.hl span{color:#2E4A39}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.box h3{font-size:18px;margin-bottom:10px}
+.box p{color:var(--muted);font-size:16px}
+.box .ico{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;margin-bottom:18px;color:var(--green-2)}
+.box .ico svg{width:24px;height:24px}
+
+.vert{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column}
+.vert h3{font-size:20px;margin:16px 0 10px}
+.vert p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.vert ul{list-style:none;margin-top:auto}
+.vert li{font-size:14px;font-weight:600;padding:8px 0;border-top:1px solid var(--line)}
+.vert .ico{width:48px;height:48px;border-radius:14px;background:var(--deep);color:var(--lime);display:grid;place-items:center}
+.vert .ico svg{width:26px;height:26px}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:Unbounded,sans-serif;font-weight:700;font-size:28px;color:var(--green);display:block;margin-bottom:16px}
+.step h3{font-size:17px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+
+.pricing{background:var(--soft)}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;align-items:stretch}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column}
+.price.feat{background:var(--deep);color:#fff;border-color:var(--deep)}
+.price h3{font-size:19px;margin-bottom:6px}
+.price .sub{color:var(--muted);font-size:15px;margin-bottom:20px}
+.price.feat .sub{color:#9DB8A6}
+.amount{font-family:Unbounded,sans-serif;font-size:32px;font-weight:700;margin-bottom:22px}
+.amount small{font-family:Manrope,sans-serif;font-size:16px;font-weight:600;opacity:.7}
+.price ul{list-style:none;margin-bottom:28px;flex:1}
+.price li{padding:7px 0 7px 28px;position:relative;font-size:15px}
+.price li::before{content:"";position:absolute;left:0;top:12px;width:16px;height:16px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.price.feat li::before{background-color:var(--lime);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-5' fill='none' stroke='%230D2A1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.badge{align-self:flex-start;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:var(--lime);color:var(--deep);padding:5px 10px;border-radius:99px;margin-bottom:14px}
+.price-note{margin-top:22px;color:var(--muted);font-size:15px;max-width:760px}
+
+.principles{background:var(--deep);color:#fff}
+.principles .lead{color:#C9DCCF}
+.principles .box{background:var(--deep-2);border-color:rgba(255,255,255,.08)}
+.principles .box p{color:#B5CBBC}
+.principles .box h3{color:var(--lime)}
+
+.case{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column}
+.case .where{font-size:13px;font-weight:700;color:var(--green-2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em}
+.case h3{font-size:19px;margin-bottom:16px}
+.ba{display:grid;gap:8px;margin-bottom:16px}
+.ba div{background:var(--bg);border-radius:12px;padding:12px 14px}
+.ba small{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px}
+.ba b{font-size:15px}
+.ba .after{background:var(--soft)}
+.case p{color:var(--muted);font-size:15px}
+
+.faq{margin-top:36px;display:grid;gap:12px;max-width:820px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 24px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--green);flex:none}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:12px;font-size:16px}
+
+.cta{background:var(--green);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.cta h2{margin-bottom:12px}
+.cta p{color:#E4F6EA;font-size:18px}
+.cta-actions{display:grid;gap:12px}
+.cta .btn-main{background:#fff;color:var(--deep)}
+.cta .btn-ghost{border-color:rgba(255,255,255,.5)}
+.contact-line{font-size:15px;color:#E4F6EA;text-align:center}
+.contact-line a{font-weight:700;text-decoration:none}
+
+footer{background:var(--deep);color:#9DB8A6;padding:48px 0 40px;font-size:14px}
+.foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+footer h4{color:#fff;font-size:15px;margin-bottom:12px}
+footer p{margin-bottom:6px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.copy{border-top:1px solid rgba(255,255,255,.08);margin-top:32px;padding-top:20px}
+
+@media (max-width:960px){
+  .hero-grid,.cta{grid-template-columns:1fr}
+  .grid-3,.prices{grid-template-columns:1fr}
+  .grid-4,.steps{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .hero{padding:56px 0 64px}
+  .grid-4,.steps{grid-template-columns:1fr}
+  .tile{min-height:120px;padding:18px}
+  .cta{padding:32px 22px;border-radius:22px}
+  .hero-actions .btn{width:100%}
+  .nav .btn span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0D2A1E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-8"/><path d="M15 7h5v5"/></svg></span>
+      Форсайт
+    </a>
+    <nav class="nav-links">
+      <a href="#verticals">Направления</a>
+      <a href="#services">Услуги</a>
+      <a href="#how">Как работаем</a>
+      <a href="#prices">Цены</a>
+      <a href="#cases">Кейсы</a>
+    </nav>
+    <a class="btn btn-main" href="https://t.me/Boyboounce" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.1 14.8c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-8c.4-.3-.1-.5-.6-.2L6.7 13 2.1 11.6c-1-.3-1-1 .2-1.5L20.5 3c.8-.3 1.6.2 1.4 1.3z"/></svg>
+      <span>Написать</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag" style="background:rgba(185,242,124,.14);color:var(--lime)">Агентство продвижения на Авито</span>
+      <h1>Продвигаем бизнес на <em>Авито</em> под ключ</h1>
+      <p>Оформляем профиль и объявления, запускаем продвижение и ведём аккаунт. Работаем с товарами, услугами, спецтехникой и наймом по всей России.</p>
+      <div class="hero-actions">
+        <a class="btn btn-main" href="https://t.me/Boyboounce" target="_blank" rel="noopener">Бесплатный аудит профиля</a>
+        <a class="btn btn-ghost" href="tel:+79042142803">+7 904 214-28-03</a>
+      </div>
+      <p class="hero-note">Пришлите ссылку на профиль в Telegram — разберём, что мешает продажам.</p>
+    </div>
+
+    <div class="tiles" aria-hidden="true">
+      <div class="tile hl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <div><b>Товары</b><span>магазины и производители</span></div>
+      </div>
+      <div class="tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg>
+        <div><b>Услуги</b><span>локальный и федеральный сервис</span></div>
+      </div>
+      <div class="tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h13V9H8L5 13H2v4z"/><path d="M15 12h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+        <div><b>Спецтехника</b><span>аренда и продажа</span></div>
+      </div>
+      <div class="tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.5a3.5 3.5 0 0 1 0 6"/><path d="M18 14a6 6 0 0 1 3.5 6"/></svg>
+        <div><b>Работа</b><span>вакансии и найм</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="verticals">
+  <div class="wrap">
+    <span class="tag">Направления</span>
+    <h2>Работаем во всех категориях Авито</h2>
+    <p class="lead">У каждой категории своя логика выдачи и свои инструменты. Подбираем подход под ваш бизнес, а не под шаблон.</p>
+    <div class="grid-4">
+      <div class="vert">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></div>
+        <h3>Товары</h3>
+        <p>Интернет-магазины, производители, оптовые и розничные продавцы.</p>
+        <ul><li>Магазин на Авито</li><li>Каталог и автозагрузка</li><li>Доставка и продажи</li></ul>
+      </div>
+      <div class="vert">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg></div>
+        <h3>Услуги</h3>
+        <p>Ремонт, строительство, авто, красота, мероприятия и другой сервис.</p>
+        <ul><li>Профиль исполнителя</li><li>Объявления под запросы</li><li>Заявки и звонки</li></ul>
+      </div>
+      <div class="vert">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h13V9H8L5 13H2v4z"/><path d="M15 12h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+        <h3>Спецтехника</h3>
+        <p>Аренда и продажа спецтехники, B2B-клиенты с высоким чеком.</p>
+        <ul><li>Профиль компании</li><li>Парк техники в карточках</li><li>Заявки от бизнеса</li></ul>
+      </div>
+      <div class="vert">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.5a3.5 3.5 0 0 1 0 6"/><path d="M18 14a6 6 0 0 1 3.5 6"/></svg></div>
+        <h3>Работа</h3>
+        <p>Массовый подбор и точечные вакансии для компаний.</p>
+        <ul><li>Страница работодателя</li><li>Тексты вакансий</li><li>Отклики кандидатов</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <span class="tag">Услуги</span>
+    <h2>Что мы делаем</h2>
+    <div class="grid-3">
+      <div class="box">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></div>
+        <h3>Аудит и анализ ниши</h3><p>Разбираем ваш профиль, спрос в категории и конкурентов в выдаче. Находим, где теряются клиенты.</p>
+      </div>
+      <div class="box">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <h3>Оформление профиля</h3><p>Профиль компании или магазин на Авито: структура, описание, визуал, автоответы.</p>
+      </div>
+      <div class="box">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>Объявления</h3><p>Заголовки, тексты, первые фото и инфографика, которые цепляют в ленте и выдаче.</p>
+      </div>
+      <div class="box">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-8"/><path d="M15 7h5v5"/></svg></div>
+        <h3>Продвижение</h3><p>Подбираем инструменты и управляем рекламным бюджетом так, чтобы он окупался заявками и продажами.</p>
+      </div>
+      <div class="box">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg></div>
+        <h3>Автозагрузка</h3><p>Для больших каталогов и парков техники: объявления выгружаются и обновляются автоматически.</p>
+      </div>
+      <div class="box">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Ведение и аналитика</h3><p>Следим за показами, контактами и расходами, регулярно отчитываемся и масштабируем то, что работает.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <span class="tag">Как работаем</span>
+    <h2>От аудита до стабильного потока клиентов</h2>
+    <div class="steps">
+      <div class="step"><h3>Бесплатный аудит</h3><p>Смотрим профиль, нишу и конкурентов. Показываем точки роста.</p></div>
+      <div class="step"><h3>Стратегия</h3><p>Созваниваемся, согласуем цели, объём работ и бюджет на продвижение.</p></div>
+      <div class="step"><h3>Запуск</h3><p>Оформляем профиль и объявления, настраиваем продвижение.</p></div>
+      <div class="step"><h3>Ведение и рост</h3><p>Анализируем результаты, оптимизируем и масштабируем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" class="pricing">
+  <div class="wrap">
+    <span class="tag">Цены</span>
+    <h2>Стоимость работ</h2>
+    <p class="lead">Точную цену называем после аудита, когда понятны категория и объём работы.</p>
+    <div class="prices">
+      <div class="price">
+        <h3>Аудит</h3>
+        <p class="sub">С чего начать</p>
+        <div class="amount">0 ₽</div>
+        <ul>
+          <li>Разбор профиля и объявлений</li>
+          <li>Анализ конкурентов в выдаче</li>
+          <li>Главные точки роста</li>
+        </ul>
+        <a class="btn btn-green" href="https://t.me/Boyboounce" target="_blank" rel="noopener">Получить аудит</a>
+      </div>
+      <div class="price feat">
+        <span class="badge">Основная услуга</span>
+        <h3>Запуск под ключ</h3>
+        <p class="sub">Профиль, объявления, продвижение</p>
+        <div class="amount">от 20 000 ₽</div>
+        <ul>
+          <li>Оформление профиля или магазина</li>
+          <li>Объявления: тексты, заголовки, фото</li>
+          <li>Настройка продвижения</li>
+          <li>Автоответы и автозагрузка при необходимости</li>
+        </ul>
+        <a class="btn btn-main" href="https://t.me/Boyboounce" target="_blank" rel="noopener">Обсудить запуск</a>
+      </div>
+      <div class="price">
+        <h3>Ведение</h3>
+        <p class="sub">После запуска</p>
+        <div class="amount">от 15 000 ₽<small> / мес</small></div>
+        <ul>
+          <li>Управление продвижением и бюджетом</li>
+          <li>Новые объявления и обновления</li>
+          <li>Ежемесячный отчёт</li>
+        </ul>
+        <a class="btn btn-green" href="https://t.me/Boyboounce" target="_blank" rel="noopener">Узнать подробнее</a>
+      </div>
+    </div>
+    <p class="price-note">Бюджет на продвижение не входит в стоимость работ: он остаётся на вашем кошельке Авито и списывается площадкой напрямую.</p>
+  </div>
+</section>
+
+<section class="principles">
+  <div class="wrap">
+    <span class="tag" style="background:rgba(185,242,124,.14);color:var(--lime)">Наш подход</span>
+    <h2>Прозрачно и на результат</h2>
+    <div class="grid-3">
+      <div class="box"><h3>Ваш бюджет — на вашем счёте</h3><p>Деньги на продвижение не проходят через нас. Вы видите каждую трату в своём кабинете Авито.</p></div>
+      <div class="box"><h3>Решения по данным</h3><p>Смотрим на спрос в нише, стоимость контакта и конверсию, а не действуем наугад.</p></div>
+      <div class="box"><h3>По договору, по всей России</h3><p>Работаем удалённо с любым городом. Договор с ИП, оплата на расчётный счёт.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <span class="tag">Кейсы</span>
+    <h2>Что мы уже сделали</h2>
+    <div class="grid-3">
+      <div class="case">
+        <div class="where">Услуги · Воронеж</div>
+        <h3>Кузовной центр</h3>
+        <div class="ba">
+          <div><small>Было</small><b>2 объявления на все услуги</b></div>
+          <div class="after"><small>Стало</small><b>13 объявлений под конкретные запросы</b></div>
+        </div>
+        <p>Разложили ремонт, покраску и полировку по отдельным объявлениям, переписали заголовки и тексты, настроили автоответы.</p>
+      </div>
+      <div class="case">
+        <div class="where">Услуги · Воронеж</div>
+        <h3>Выездной автоэлектрик</h3>
+        <div class="ba">
+          <div><small>Было</small><b>Одно объявление на все работы</b></div>
+          <div class="after"><small>Стало</small><b>Объявления под каждую проблему клиента</b></div>
+        </div>
+        <p>Переупаковали профиль под то, как ищут клиенты. После настройки заявок стало заметно больше.</p>
+      </div>
+      <div class="case">
+        <div class="where">Спецтехника · Воронеж</div>
+        <h3>Аренда спецтехники</h3>
+        <div class="ba">
+          <div><small>Задача</small><b>Платили за продвижение, а заявок было мало</b></div>
+          <div class="after"><small>Сделали</small><b>Аудит и настройка профиля компании</b></div>
+        </div>
+        <p>Работаем с компаниями по аренде спецтехники: разбираем профиль и выстраиваем его под запросы B2B-клиентов.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:28px">Сейчас ведём профили бизнеса в Воронеже, Краснодаре и других городах.</p>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <span class="tag">Вопросы</span>
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details><summary>С какими категориями вы работаете?</summary><p>Товары, услуги, спецтехника и работа. Если вашей ниши нет в списке, напишите: скажем честно, сможем ли помочь.</p></details>
+      <details><summary>У меня уже есть профиль. Начинать с нуля?</summary><p>Нет. Работаем с текущим профилем: сохраняем отзывы и рейтинг, переделываем и дополняем то, что мешает продажам.</p></details>
+      <details><summary>Сколько нужно тратить на продвижение?</summary><p>Зависит от категории, города и конкуренции. Бюджет согласуем после аудита, он остаётся на вашем кошельке Авито.</p></details>
+      <details><summary>Вы работаете с моим городом?</summary><p>Да, работаем удалённо по всей России. Аудит делаем по выдаче именно в вашем регионе.</p></details>
+      <details><summary>Как оформляется работа и оплата?</summary><p>Работаем как ИП по договору, оплата на расчётный счёт. Точную стоимость называем после аудита.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Начнём с бесплатного аудита</h2>
+        <p>Пришлите ссылку на профиль Авито в Telegram. Покажем, что мешает продажам и как это исправить.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-main" href="https://t.me/Boyboounce" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn-ghost" href="tel:+79042142803">Позвонить</a>
+        <p class="contact-line"><a href="tel:+79042142803">+7 904 214-28-03</a> · <a href="https://t.me/Boyboounce" target="_blank" rel="noopener">@Boyboounce</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#" class="logo" style="color:#fff;margin-bottom:12px">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0D2A1E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-8"/><path d="M15 7h5v5"/></svg></span>
+          Форсайт
+        </a>
+        <p>Агентство продвижения бизнеса на Авито. Товары, услуги, спецтехника и найм по всей России.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p><a href="tel:+79042142803">+7 904 214-28-03</a></p>
+        <p><a href="https://t.me/Boyboounce" target="_blank" rel="noopener">Telegram: @Boyboounce</a></p>
+        <p>Воронеж, работаем удалённо по России</p>
+      </div>
+      <div>
+        <h4>Реквизиты</h4>
+        <p>ИП Лисицын Данила Дмитриевич</p>
+        <p>ИНН 366110200401</p>
+        <p>ОГРНИП 325366800081473</p>
+      </div>
+    </div>
+    <div class="copy">© 2026 Форсайт. Авито — товарный знак ООО «КЕХ еКоммерц». Агентство не является представителем Авито.</div>
+  </div>
+</footer>
+
+</body>
+</html>
