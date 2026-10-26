@@ -93,7 +93,7 @@
   width: 100%;
   object-fit: cover;
   object-position: 68% 44%;
-  filter: saturate(0.45) brightness(0.85);
+  filter: saturate(0.4) brightness(0.64);
 }
 .hero-project-image {
   position: absolute;
@@ -404,7 +404,7 @@
   }
   .hero-picture img {
     object-position: 62% center;
-    filter: saturate(0.35) brightness(0.7);
+    filter: saturate(0.35) brightness(0.58);
   }
   .hero-media-shade {
     background:

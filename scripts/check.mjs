@@ -47,7 +47,11 @@ if ((html.match(/<h1\b/g) || []).length !== 1)
   failures.push("Expected exactly one h1");
 if (!html.includes("https://sahland.github.io/forsite/"))
   failures.push("Missing production URL");
-for (const image of ["craft.webp", "craft-mobile.webp", "workshop.webp"]) {
+for (const image of [
+  "forest-road.webp",
+  "forest-road-mobile.webp",
+  "workshop.webp",
+]) {
   const info = await stat(join(root, "assets/images", image));
   if (info.size > 300_000)
     failures.push(`Image exceeds 300 KB budget: ${image}`);
