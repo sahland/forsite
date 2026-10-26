@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Форсайт" />
-    <meta property="og:title" content="Форсайт — ваш бизнес на Авито" />
+    <meta property="og:title" content="Форсайт — Ваш бизнес. На шаг впереди." />
     <meta
       property="og:description"
       content="Продвижение на Авито с вниманием к вашему бизнесу. От первого аудита до системной работы с заявками."
@@ -26,7 +26,10 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Форсайт. Ваш бизнес на Авито." />
+    <meta
+      property="og:image:alt"
+      content="Форсайт. Ваш бизнес. На шаг впереди."
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Форсайт — продвижение на Авито" />
     <meta
@@ -41,7 +44,7 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
     <link
       rel="preload"
-      href="assets/fonts/cormorant-cyrillic.woff2"
+      href="assets/fonts/cormorant-medium-cyrillic.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -54,6 +57,7 @@
       crossorigin
     />
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/opening.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -144,77 +148,61 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <picture class="hero-picture"
-          ><source
-            media="(max-width: 700px)"
-            srcset="assets/images/forest-road-mobile.webp" />
-          <img
-            src="assets/images/forest-road.webp"
-            width="1600"
-            height="1066"
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-        /></picture>
-        <div class="hero-shade"></div>
-        <div class="hero-content container">
-          <p class="eyebrow hero-intro">Агентство «Форсайт»</p>
-          <h1 id="hero-title">
-            <span class="line"><span>Ваш бизнес</span></span
-            ><span class="line"
-              ><span>на <em>Авито.</em></span></span
-            >
-          </h1>
-          <div class="hero-bottom">
-            <p class="hero-description">
-              Оформляем профиль, готовим объявления<br />и ведём продвижение по
-              всей России.
-            </p>
-            <button class="circle-link" data-audit>
-              <span>Разобрать мой профиль</span
-              ><svg aria-hidden="true"><use href="#symbol-arrow" /></svg>
-            </button>
+        <div class="hero-stage">
+          <div class="hero-media">
+            <picture class="hero-picture"
+              ><source
+                media="(max-width: 700px)"
+                srcset="assets/images/craft-mobile.webp" />
+              <img
+                src="assets/images/craft.webp"
+                width="1200"
+                height="1600"
+                alt=""
+                fetchpriority="high"
+                decoding="async"
+            /></picture>
+            <img
+              class="hero-project-image"
+              src="assets/images/workshop.webp"
+              width="1000"
+              height="667"
+              alt=""
+              decoding="async"
+            />
+            <div class="hero-media-shade"></div>
           </div>
-        </div>
-        <div class="hero-foot container">
-          <a href="#approach" class="scroll-cue">О нашем подходе ↓</a
-          ><span class="hero-location">Воронеж · Работаем по всей России</span>
-        </div>
-      </section>
-
-      <section
-        class="approach light-section section-space"
-        id="approach"
-        aria-labelledby="approach-title"
-      >
-        <div class="container">
-          <div class="section-top">
-            <span class="eyebrow">О нас</span>
-          </div>
-          <div class="approach-layout">
-            <h2 class="statement" id="approach-title" data-reveal>
-              Помогаем компаниям<br />продавать на Авито.
-            </h2>
-            <div class="approach-copy" data-reveal>
-              <p>
-                Чтобы получать обращения с Авито, недостаточно опубликовать
-                объявление и оплатить продвижение. Важно, что видит покупатель:
-                фотографию, заголовок, цену и само предложение.
+          <div class="hero-content container">
+            <p class="eyebrow hero-intro">Продвижение на Авито</p>
+            <h1 id="hero-title">
+              <span class="line"><span>Ваш бизнес.</span></span
+              ><span class="line"
+                ><span>На шаг <em>впереди.</em></span></span
+              >
+            </h1>
+            <div class="hero-bottom">
+              <p class="hero-description">
+                Оформляем профиль и объявления.<br />
+                Запускаем продвижение и ведём аккаунт.
               </p>
-              <p>
-                Мы берём эту работу на себя. Изучаем выдачу в вашем городе,
-                оформляем профиль, готовим объявления под отдельные услуги или
-                товары. После запуска следим за обращениями и расходами.
-              </p>
-              <a href="#services" class="text-link"
-                >Что входит в работу
-                <svg aria-hidden="true"><use href="#symbol-arrow" /></svg
-              ></a>
+              <button class="audit-link" data-audit>
+                <span>Бесплатный аудит профиля</span
+                ><svg aria-hidden="true"><use href="#symbol-arrow" /></svg>
+              </button>
             </div>
           </div>
-          <div class="industries" aria-label="Направления работы">
-            <span>Товары</span><span>Услуги</span><span>Спецтехника</span
-            ><span>Найм</span>
+          <div class="hero-foot container">
+            <a href="#work" class="scroll-cue">Смотреть нашу работу ↓</a
+            ><span class="hero-location"
+              >Товары, услуги, спецтехника, найм</span
+            >
+          </div>
+          <div class="scene-caption container" aria-hidden="true">
+            <p>Из нашей практики</p>
+            <span
+              >Кузовной центр.<br />
+              <em>Воронеж.</em></span
+            ><small>Фотографии — иллюстрация направления</small>
           </div>
         </div>
       </section>
@@ -230,29 +218,35 @@
           </div>
           <div class="section-heading">
             <h2 id="work-title" data-reveal>
-              Кузовной центр<br /><em>в Воронеже</em>
+              Кузовной центр<br />
+              <em>в Воронеже</em>
             </h2>
             <p data-reveal>
-              Пересобрали объявления по услугам:<br />ремонт, покраска и
-              полировка.
+              Пересобрали объявления по услугам:<br />
+              ремонт, покраска и полировка.
             </p>
           </div>
           <div class="project-feature">
-            <div class="project-image">
-              <img
-                src="assets/images/workshop.webp"
-                width="1000"
-                height="667"
-                alt="Мастер за работой в автомобильной мастерской — иллюстрация направления"
-                loading="lazy"
-                decoding="async"
-              /><span class="photo-note"
-                >Фотография — иллюстрация направления</span
-              >
+            <div class="project-facts" data-reveal>
+              <p>
+                <strong>2</strong
+                ><span
+                  >общих объявления<br />
+                  на все услуги центра</span
+                >
+              </p>
+              <p>
+                <strong>13</strong
+                ><span
+                  >отдельных объявлений<br />
+                  под ремонт, покраску и полировку</span
+                >
+              </p>
             </div>
             <div class="project-story" data-reveal>
               <p class="project-lead">
-                Раньше все услуги<br />были в двух объявлениях.
+                Раньше все услуги<br />
+                были в двух объявлениях.
               </p>
               <p>
                 Разделили их на 13 отдельных предложений. Для каждого
@@ -286,6 +280,44 @@
       </section>
 
       <section
+        class="approach light-section section-space"
+        id="approach"
+        aria-labelledby="approach-title"
+      >
+        <div class="container">
+          <div class="section-top">
+            <span class="eyebrow">О нас</span>
+          </div>
+          <div class="approach-layout">
+            <h2 class="statement" id="approach-title" data-reveal>
+              Помогаем компаниям<br />
+              продавать на Авито.
+            </h2>
+            <div class="approach-copy" data-reveal>
+              <p>
+                Чтобы получать обращения с Авито, недостаточно опубликовать
+                объявление и оплатить продвижение. Важно, что видит покупатель:
+                фотографию, заголовок, цену и само предложение.
+              </p>
+              <p>
+                Мы берём эту работу на себя. Изучаем выдачу в вашем городе,
+                оформляем профиль, готовим объявления под отдельные услуги или
+                товары. После запуска следим за обращениями и расходами.
+              </p>
+              <a href="#services" class="text-link"
+                >Что входит в работу
+                <svg aria-hidden="true"><use href="#symbol-arrow" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="industries" aria-label="Направления работы">
+            <span>Товары</span><span>Услуги</span><span>Спецтехника</span
+            ><span>Найм</span>
+          </div>
+        </div>
+      </section>
+
+      <section
         class="services section-space"
         id="services"
         aria-labelledby="services-title"
@@ -297,11 +329,12 @@
           <div class="services-layout">
             <div class="services-intro">
               <h2 id="services-title" data-reveal>
-                От оформления<br />до ведения
+                От оформления<br />
+                до ведения
               </h2>
               <p>
-                Можно поручить нам весь аккаунт<br />или начать с отдельной
-                задачи.
+                Можно поручить нам весь аккаунт<br />
+                или начать с отдельной задачи.
               </p>
             </div>
             <div class="service-list">
@@ -389,7 +422,10 @@
       >
         <div class="container">
           <div class="terms-layout">
-            <h2 id="process-title" data-reveal>Работаем<br />по договору.</h2>
+            <h2 id="process-title" data-reveal>
+              Работаем<br />
+              по договору.
+            </h2>
             <div class="terms-copy" data-reveal>
               <h3>Согласуем условия до запуска</h3>
               <p>
@@ -415,8 +451,8 @@
           <div class="section-heading">
             <h2 id="pricing-title" data-reveal>Стоимость</h2>
             <p data-reveal>
-              Окончательную цену согласуем после знакомства<br />с вашим
-              профилем и задачей.
+              Окончательную цену согласуем после знакомства<br />
+              с вашим профилем и задачей.
             </p>
           </div>
           <div class="pricing-list">
@@ -425,7 +461,8 @@
                 <h3>Аудит профиля</h3>
               </div>
               <p class="price-includes">
-                Разбор профиля и объявлений.<br />Что исправить и с чего начать.
+                Разбор профиля и объявлений.<br />
+                Что исправить и с чего начать.
               </p>
               <div class="price-action">
                 <span class="price-amount">Бесплатно</span
@@ -440,8 +477,8 @@
                 <h3>Запуск под ключ</h3>
               </div>
               <p class="price-includes">
-                Профиль, тексты, визуал и продвижение.<br />Автоответы и
-                автозагрузка — по задаче.
+                Профиль, тексты, визуал и продвижение.<br />
+                Автоответы и автозагрузка — по задаче.
               </p>
               <div class="price-action">
                 <span class="price-amount">от 20 000 <span>₽</span></span
@@ -460,8 +497,8 @@
                 <h3>Ведение</h3>
               </div>
               <p class="price-includes">
-                Управление продвижением, обновление<br />объявлений и
-                ежемесячная аналитика.
+                Управление продвижением, обновление<br />
+                объявлений и ежемесячная аналитика.
               </p>
               <div class="price-action">
                 <span class="price-amount">от 15 000 <span>₽ / мес.</span></span
@@ -491,7 +528,8 @@
         <div class="container faq-layout">
           <div>
             <h2 id="faq-title" data-reveal>
-              Что ещё<br /><em>важно знать</em>
+              Что ещё<br />
+              <em>важно знать</em>
             </h2>
           </div>
           <div class="faq-list">
@@ -573,13 +611,14 @@
         </div>
         <div class="container">
           <h2 id="contact-title" data-reveal>
-            Разберём ваш<br /><em>профиль на Авито.</em>
+            Разберём ваш<br />
+            <em>профиль на Авито.</em>
           </h2>
           <div class="contact-bottom">
             <p>
-              Напишите, чем занимаетесь, и пришлите ссылку.<br />Посмотрим
-              профиль и обсудим, что можно улучшить.<br />Первый аудит —
-              бесплатно.
+              Напишите, чем занимаетесь, и пришлите ссылку.<br />
+              Посмотрим профиль и обсудим, что можно улучшить.<br />
+              Первый аудит — бесплатно.
             </p>
             <a
               class="contact-telegram"
@@ -611,16 +650,16 @@
         </div>
         <div class="footer-bottom">
           <p>
-            © <span id="year">2026</span> Форсайт<br />Воронеж · Работаем по
-            всей России
+            © <span id="year">2026</span> Форсайт<br />
+            Воронеж · Работаем по всей России
           </p>
           <p>
-            ИП Лисицын Данила Дмитриевич<br />ИНН 366110200401 · ОГРНИП
-            325366800081473
+            ИП Лисицын Данила Дмитриевич<br />
+            ИНН 366110200401 · ОГРНИП 325366800081473
           </p>
           <p class="legal-note">
-            Авито — товарный знак ООО «КЕХ еКоммерц».<br />Мы — независимое
-            агентство.
+            Авито — товарный знак ООО «КЕХ еКоммерц».<br />
+            Мы — независимое агентство.
           </p>
         </div>
       </div>
@@ -653,7 +692,10 @@
       <button class="dialog-close" data-close aria-label="Закрыть окно аудита">
         Закрыть <span>×</span>
       </button>
-      <h2 id="audit-title">Посмотрим<br /><em>ваш профиль.</em></h2>
+      <h2 id="audit-title">
+        Посмотрим<br />
+        <em>ваш профиль.</em>
+      </h2>
       <p>
         Напишите нам в Telegram. Чтобы разбор был полезнее, добавьте три вещи:
       </p>

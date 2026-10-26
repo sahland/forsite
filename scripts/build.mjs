@@ -28,7 +28,7 @@ for (const file of [
 await cp(join(root, "assets"), join(output, "assets"), { recursive: true });
 // A new design must not accidentally load a previous release's cached CSS or JS.
 let html = await readFile(join(output, "index.html"), "utf8");
-for (const file of ["style.css", "main.js"]) {
+for (const file of ["style.css", "opening.css", "main.js"]) {
   const data = await readFile(join(output, "assets", file));
   const hash = createHash("sha256").update(data).digest("hex").slice(0, 10);
   const fingerprinted = file.replace(/\.(css|js)$/, `.${hash}.$1`);

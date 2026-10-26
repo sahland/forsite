@@ -140,22 +140,80 @@
   }
 
   const hero = document.querySelector(".hero");
-  const picture = document.querySelector(".hero-picture");
+  const stage = document.querySelector(".hero-stage");
+  const auditButton = hero.querySelector("[data-audit]");
+  const workLink = hero.querySelector(".scroll-cue");
   let framePending = false;
+  let lastProgress = -1;
+  let lastMode = null;
+  let lastLayout = null;
+
+  const clamp = (value) => Math.min(1, Math.max(0, value));
+  const smooth = (value) => {
+    const t = clamp(value);
+    return t * t * (3 - 2 * t);
+  };
 
   function updateMotion() {
     framePending = false;
-    if (reducedMotion.matches) {
-      picture.style.removeProperty("--hero-y");
+    const enabled = !reducedMotion.matches && window.innerHeight >= 650;
+    const mobile = window.innerWidth <= 760;
+    const layout = mobile
+      ? "mobile"
+      : window.innerWidth <= 1150
+        ? "tablet"
+        : "desktop";
+    document.documentElement.classList.toggle("scene-ready", enabled);
+    if (reducedMotion.matches)
       document.documentElement.classList.remove("motion-ready");
-      return;
-    }
     const heroRect = hero.getBoundingClientRect();
-    if (heroRect.bottom > 0)
-      picture.style.setProperty(
-        "--hero-y",
-        `${Math.min(window.scrollY * 0.17, 160)}px`,
-      );
+    const distance = Math.max(1, hero.offsetHeight - stage.offsetHeight);
+    const progress = enabled ? clamp(-heroRect.top / distance) : 0;
+    if (
+      Math.abs(progress - lastProgress) < 0.0005 &&
+      enabled === lastMode &&
+      layout === lastLayout
+    )
+      return;
+    lastProgress = progress;
+    lastMode = enabled;
+    lastLayout = layout;
+
+    const opening = smooth(progress / 0.76);
+    const fade = 1 - smooth((progress - 0.18) / 0.38);
+    const dissolve = smooth((progress - 0.4) / 0.38);
+    const caption = smooth((progress - 0.62) / 0.32);
+    const frame = mobile
+      ? [27, 0, 14, 31]
+      : window.innerWidth <= 1150
+        ? [18, 4, 12, 45]
+        : [16, 5.5, 11, 47];
+    ["top", "right", "bottom", "left"].forEach((edge, index) =>
+      hero.style.setProperty(
+        `--frame-${edge}`,
+        `${(frame[index] * (1 - opening)).toFixed(3)}%`,
+      ),
+    );
+    hero.style.setProperty("--type-opacity", fade.toFixed(3));
+    hero.style.setProperty("--type-y", `${(-progress * 85).toFixed(2)}px`);
+    hero.style.setProperty(
+      "--image-scale",
+      (1.06 + progress * 0.04).toFixed(3),
+    );
+    hero.style.setProperty("--craft-opacity", (1 - dissolve).toFixed(3));
+    hero.style.setProperty("--project-opacity", dissolve.toFixed(3));
+    hero.style.setProperty(
+      "--project-scale",
+      (1.12 - progress * 0.12).toFixed(3),
+    );
+    hero.style.setProperty("--caption-opacity", caption.toFixed(3));
+    hero.style.setProperty(
+      "--caption-y",
+      `${((1 - caption) * 24).toFixed(2)}px`,
+    );
+    hero.classList.toggle("is-transitioning", fade < 0.15);
+    auditButton.disabled = fade < 0.15;
+    workLink.tabIndex = fade < 0.15 ? -1 : 0;
   }
 
   function scheduleMotion() {

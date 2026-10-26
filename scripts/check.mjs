@@ -4,7 +4,13 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const html = await readFile(join(root, "index.html"), "utf8");
-const css = await readFile(join(root, "assets/style.css"), "utf8");
+const css = (
+  await Promise.all(
+    ["style.css", "opening.css"].map((file) =>
+      readFile(join(root, "assets", file), "utf8"),
+    ),
+  )
+).join("\n");
 const failures = [];
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 if (new Set(ids).size !== ids.length) failures.push("Duplicate HTML ids");
@@ -41,11 +47,7 @@ if ((html.match(/<h1\b/g) || []).length !== 1)
   failures.push("Expected exactly one h1");
 if (!html.includes("https://sahland.github.io/forsite/"))
   failures.push("Missing production URL");
-for (const image of [
-  "forest-road.webp",
-  "forest-road-mobile.webp",
-  "workshop.webp",
-]) {
+for (const image of ["craft.webp", "craft-mobile.webp", "workshop.webp"]) {
   const info = await stat(join(root, "assets/images", image));
   if (info.size > 300_000)
     failures.push(`Image exceeds 300 KB budget: ${image}`);
