@@ -49,7 +49,7 @@
 
   const cases = {
     bodywork: {
-      category: "Разбор проекта / Услуги · Воронеж",
+      category: "Услуги, Воронеж",
       title: "Кузовной центр",
       sections: [
         [
@@ -69,7 +69,7 @@
       note: "Изменение количества объявлений, не показатель роста продаж.",
     },
     electrician: {
-      category: "Разбор проекта / Услуги · Воронеж",
+      category: "Услуги, Воронеж",
       title: "Выездной автоэлектрик",
       sections: [
         [
@@ -85,8 +85,8 @@
           "Покупателю проще обратиться, когда он узнаёт в объявлении свою проблему. Поэтому отправной точкой стала задача клиента, а не общий перечень услуг.",
         ],
       ],
-      stat: "Точнее запрос.",
-      note: "Точнее предложение. Количественных данных по обращениям в этом разборе нет.",
+      stat: "",
+      note: "",
     },
   };
 
@@ -98,13 +98,15 @@
       document.querySelector("#case-title").textContent = data.title;
       const content = document.querySelector("#case-content");
       content.replaceChildren();
-      const stat = document.createElement("div");
-      stat.className = "case-stat";
-      stat.textContent = data.stat;
-      const note = document.createElement("span");
-      note.textContent = data.note;
-      stat.append(note);
-      content.append(stat);
+      if (data.stat) {
+        const stat = document.createElement("div");
+        stat.className = "case-stat";
+        stat.textContent = data.stat;
+        const note = document.createElement("span");
+        note.textContent = data.note;
+        stat.append(note);
+        content.append(stat);
+      }
       data.sections.forEach(([heading, description]) => {
         const title = document.createElement("h3");
         title.textContent = heading;
@@ -139,41 +141,21 @@
 
   const hero = document.querySelector(".hero");
   const picture = document.querySelector(".hero-picture");
-  const track = document.querySelector(".process-track");
-  const emblem = document.querySelector(".service-emblem > svg");
-  const services = document.querySelector("#services");
   let framePending = false;
 
   function updateMotion() {
     framePending = false;
     if (reducedMotion.matches) {
       picture.style.removeProperty("--hero-y");
-      emblem.style.removeProperty("transform");
       document.documentElement.classList.remove("motion-ready");
       return;
     }
-    const viewportHeight = window.innerHeight;
     const heroRect = hero.getBoundingClientRect();
     if (heroRect.bottom > 0)
       picture.style.setProperty(
         "--hero-y",
         `${Math.min(window.scrollY * 0.17, 160)}px`,
       );
-    const trackRect = track.getBoundingClientRect();
-    if (trackRect.top < viewportHeight && trackRect.bottom > 0) {
-      const progress = Math.min(
-        1,
-        Math.max(0, (viewportHeight - trackRect.top) / (viewportHeight * 0.65)),
-      );
-      track.style.setProperty("--track-progress", progress.toFixed(3));
-    }
-    const serviceRect = services.getBoundingClientRect();
-    if (serviceRect.top < viewportHeight && serviceRect.bottom > 0) {
-      const progress =
-        (viewportHeight - serviceRect.top) /
-        (viewportHeight + serviceRect.height);
-      emblem.style.transform = `rotate(${-16 + progress * 22}deg)`;
-    }
   }
 
   function scheduleMotion() {
@@ -187,19 +169,4 @@
   window.addEventListener("resize", scheduleMotion, { passive: true });
   reducedMotion.addEventListener("change", scheduleMotion);
   updateMotion();
-
-  // A small magnetic response only on a precise pointing device; no endless frame loop.
-  const circle = document.querySelector(".circle-link");
-  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    circle.addEventListener("pointermove", (event) => {
-      if (reducedMotion.matches) return;
-      const rect = circle.getBoundingClientRect();
-      const x = (event.clientX - rect.left - rect.width / 2) * 0.12;
-      const y = (event.clientY - rect.top - rect.height / 2) * 0.12;
-      circle.style.transform = `translate(${x}px, ${y}px) rotate(-4deg)`;
-    });
-    circle.addEventListener("pointerleave", () =>
-      circle.style.removeProperty("transform"),
-    );
-  }
 })();
